@@ -2,11 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
 
-Navigate to mean-coreui cd mean-coreui npm install and install npm in client folder 
+Navigate to mean-coreui cd mean-coreui `npm install` and install npm in client folder 
 
-To run node server run the npm start in root directory 
+To run node server run the `npm start` in root directory 
 
-To run angular navigate to client folder and run ng serve command
+To run angular navigate to client folder and run `ng serve` command
 
 ## Development server
 
