@@ -22,7 +22,11 @@ export class AuthService {
 
   isLoggedIn() {
     const token = this.getToken();
-    return !this.jwtHelper.isTokenExpired(token);
+    if (token) {
+      return !this.jwtHelper.isTokenExpired(token);
+    } else {
+      return false;
+    }
   }
 
   logOut() {

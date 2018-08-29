@@ -11,7 +11,7 @@ import { AuthService } from './auth.service';
 export class ApiService {
 
   private baseUrl = "http://localhost:5000";
-  
+
   constructor(
     private http: Http,
     private authService: AuthService
@@ -35,10 +35,10 @@ export class ApiService {
 
 
   request(url: string, method: RequestMethod, body?: Object) {
-    
+
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    // headers.append('Authorization', `Bearer ${this.authService.getToken()}`);
+    headers.append('Authorization', `Bearer ${this.authService.getToken()}`);
 
     const requestOptions = new RequestOptions({
       url: `${this.baseUrl}/${url}`,
@@ -51,7 +51,7 @@ export class ApiService {
     }
 
     const request = new Request(requestOptions);
-      
+
     return this.http.request(request)
     .map( (res: Response) => res.json() )
     .catch( (res: Response) => this.onRequestError(res) );
